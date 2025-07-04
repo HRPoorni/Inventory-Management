@@ -1,0 +1,134 @@
+/* Body and General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Fallback for when the image doesn't load */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('..assests/images/background.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    position: relative;
+}
+
+/* Fallback background if image fails to load */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(17, 123, 215, 0.9), rgba(0, 76, 109, 0.85));
+    z-index: -1;
+}
+
+/* Gradient overlay for better text readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(17, 123, 215, 0.7), rgba(0, 76, 109, 0.7));
+    z-index: 1;
+}
+
+/* Container for the form */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for the form */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    animation: containerFloat 3s infinite ease-in-out;
+}
+
+/* Floating effect for the container */
+@keyframes containerFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Header Style */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control,
+.form-control-file {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #e1e1e1;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-control-file:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 105, 148, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Submit Button Styling */
+.btn-primary {
+    width: 100%;
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Message Styling */
+.alert-danger {
+    background-color: #ffe5e5;
+    color: #d63031;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+    }
+}
